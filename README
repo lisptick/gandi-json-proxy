@@ -1,8 +1,13 @@
 Gandi JSON Proxy
 
-A json server proxying GANDI API Xmlrpc calls
+A json server proxying GANDI API Xmlrpc calls.
+
+Gandi JSON Proxy relies on WebOb library.
+WebOb is in a Mercurial repository at http://bitbucket.org/ianb/webob/, and installable via easy_install webob==dev. You can check it out with:
+$ hg clone http://bitbucket.org/ianb/webob
 
 To test it:
+============
 
 $ cd path/to/gandi-json-proxy
 $ python start_server.py -p8081  gandiclient:GandiAPIClient
@@ -10,6 +15,7 @@ $ curl -X POST -d'{"method":"datacenter.list","params":["yourapikey"],"id":"data
 {"error": null, "result": [{"country": "France", "id": 1, "name": "Equinix Paris"}, {"country": "United States of America", "id": 2, "name": "Level3 Baltimore"}], "id": "datacenter.list"}
 
 To install Gandi JSON Proxy on your apache server:
+===================================================
 
 Install the mod_wsgi module and add the folllowing directive to your vhost configuration:
 <IfModule mod_wsgi.c>
